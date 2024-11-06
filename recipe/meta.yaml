@@ -12,12 +12,13 @@ source:
 build:
   skip: true  # [win]
   skip: true  # [py<37]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - setuptools >=61.0
