@@ -11,12 +11,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name | replace("-", "_") }}/{{ name | replace("-", "_") }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name | replace("-", "_") }}/{{ name | replace("-", "_") }}-{{ version }}.tar.gz
   sha256: 8b490d5ed8434ed9df404404a12d58034bc02c14a1599e9db280de0367635d43
 
 build:
-  skip: true  # [win]
-  skip: true  # [py<37]
+  skip: true  # [win or py<37]
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
