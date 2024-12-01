@@ -1,18 +1,18 @@
 {% set name = "pymeos-cffi" %}
-{% set version = "1.1.1" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name | replace("-", "_") }}/{{ name | replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: 1ff11e3015d4c782daf44ced20aad63c32f4d8828080dfe2ac94937d75c4defe
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name | replace("-", "_") }}/{{ name | replace("-", "_") }}-{{ version }}.tar.gz
+  sha256: 8b490d5ed8434ed9df404404a12d58034bc02c14a1599e9db280de0367635d43
 
 build:
   skip: true  # [win]
   skip: true  # [py<37]
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
